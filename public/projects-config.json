@@ -1,0 +1,133 @@
+{
+  "projects": [
+    {
+      "id": "ruzzle",
+      "order": 2,
+      "title": "Ruzzle Engine & Game (Rust)",
+      "description": "Un jeu et un moteur graphique 3D complet écrit en Rust et OpenGL, avec une physique personnalisée et des shaders.",
+      "longDescription": "Ruzzle est un projet de 4ème année d'école d'ingénieurs. Il comprend le développement complet d'un moteur de jeu en Rust avec OpenGL, gérant des contrôles fluides et une machine d'états d'animation. Le moteur intègre un système de Transform, des Colliders en deux phases (AABB puis détaillé), une gestion de la gravité et des shaders personnalisés. Les assets (crabe 3D, rig, animations) ont été modélisés dans Blender.",
+      "category": "academic",
+      "githubUrl": "https://github.com/Byxis/Ruzzle",
+      "tags": ["Rust", "OpenGL", "Blender", "Physique", "3D", "Collider"],
+      "technologies": [
+        "Rust",
+        "Raylib",
+        "OpenGL",
+        "Blender 3D",
+        "GLSL",
+        "State Machine",
+        "AABB Colliders"
+      ],
+      "featured": true,
+      "imageUrl": null
+    },
+    {
+      "id": "webwarfare",
+      "order": 3,
+      "title": "WebWarfare - Multiplayer FPS Netcode",
+      "description": "Un FPS multijoueur sur navigateur gérant le netcode en temps réel avec compensation de latence et anti-triche.",
+      "longDescription": "WebWarfare est un projet web de 3ème année d'école d'ingénieurs. Il se focalise sur l'architecture réseau en temps réel, implémentant une compensation de latence avancée (par moyenne de ping et tolérance de gigue/jitter) et une reconnexion automatique. Il intègre également un système anti-triche robuste simulant et vérifiant chaque action des joueurs en parallèle côté serveur.",
+      "category": "academic",
+      "githubUrl": "https://github.com/Byxis/IG3-WebProjectFPS",
+      "tags": ["THREE.js", "Netcode", "Multiplayer", "Web", "3D", "Anti-cheat"],
+      "technologies": [
+        "TypeScript",
+        "Node.js",
+        "WebSockets",
+        "Netcode",
+        "Lag Compensation",
+        "Server Simulation"
+      ],
+      "featured": true,
+      "imageUrl": null
+    },
+    {
+      "id": "bomberman",
+      "order": 1,
+      "title": "Bomberman Mobile C++ (UE5)",
+      "description": "Un remake complet de Bomberman en C++ sur Unreal Engine 5 optimisée pour mobile.",
+      "longDescription": "Développé pendant mon stage chez Eussam Développements, ce projet recrée le gameplay complet de Bomberman en C++ dans Unreal Engine 5. Il intègre des déplacements d'ennemis par raycast directionnel avec prise de décision probabiliste. Le jeu a été optimisé continuellement pour mobile en désactivant Nanite et en configurant des joysticks virtuels. Les assets ont été modélisés et riggés par mes soins dans Blender puis importés dans UE5 grâce à send2unreal.",
+      "category": "professional",
+      "githubUrl": "https://github.com/Byxis/Bomberman",
+      "stores": {
+        "itch": "https://byxis.itch.io/bomberman-mobile"
+      },
+      "tags": ["C++", "UE5", "Blender"],
+      "technologies": [
+        "C++",
+        "Unreal Engine 5",
+        "Blender",
+        "Mobile Optimization",
+        "Pathfinding Raycast",
+        "Joystick Virtual"
+      ],
+      "featured": false,
+      "imageUrl": null
+    },
+    {
+      "id": "fireland",
+      "order": 4,
+      "title": "Fireland Minecraft Server Core",
+      "description": "Conception et architecture d'un serveur Minecraft Java de haute performance avec BDD multithreadée.",
+      "longDescription": "Fireland is a Minecraft server core software and plugin system that leverages multithreaded and asynchronous tasks in Java to process database calls (MySQL) and gameplay logic, eliminating server-side tick lag and hosting a community of over 200 unique players.",
+      "category": "personal",
+      "githubUrl": "https://github.com/Byxis/Fireland",
+      "tags": ["Java", "MySQL", "Spark Profiler", "Asynchrone"],
+      "technologies": [
+        "Java",
+        "MySQL",
+        "Spark",
+        "Protocollib",
+        "PaperMC",
+        "Multithreading",
+        "Async Tasks"
+      ],
+      "featured": true,
+      "imageUrl": null
+    },
+    {
+      "id": "educational-game",
+      "order": 6,
+      "title": "Baby Egg Mobile Educational Game (Unity)",
+      "description": "Migration de jeu éducatif vers Unity 6.3 LTS et ajout du support de traductions multi-langues.",
+      "longDescription": "Projet de recherche développé à l'Ulster University (Derry, Irlande du Nord). Il s'agit d'un jeu vidéo éducatif mobile qui a été migré vers Unity 6.3 LTS en raison de la faille de sécurité trouvé dans les anciennes version d'Unity. Ajout de traductions pour supporter plusieurs langues, améliorant ainsi l'accessibilité du jeu à un public international. Gestion de la publication sur le Google Play Store. Création d'un nouveau jeu Baby Egg, non publié pour le moment.",
+      "category": "professional",
+      "tags": ["C#", "Unity", "AI"],
+      "stores": {
+        "googlePlay": [
+          "https://play.google.com/store/apps/details?id=com.Parakite.BabyEggJigsaw&hl=en",
+          "https://play.google.com/store/apps/details?id=com.ParakiteLtd.BabyEgg4inarow&hl=en"
+        ]
+      },
+      "technologies": [
+        "C#",
+        "Unity 6.3 LTS",
+        "Virtual Reality",
+        "Generative AI Pipelines",
+        "XR Interaction Toolkit",
+        "Benchmark"
+      ],
+      "featured": true,
+      "imageUrl": null
+    },
+    {
+      "id": "vr-educational-game",
+      "order": 5,
+      "title": "VR Educational Game (Unity)",
+      "description": "Développement d'un jeu éducatif en Réalité Virtuelle avec pipeline d'IA générative et Unity 6.3.",
+      "longDescription": "Projet de recherche développé à l'Ulster University (Derry, Irlande du Nord). Il s'agit d'un jeu vidéo éducatif complet en VR, développé sous Unity 6.3 LTS. L'architecture intègre un pipeline d'IA générative et fait l'objet d'une optimisation continue pour une publication multi-store (Meta Quest / HTC Vive).",
+      "category": "professional",
+      "tags": ["C#", "Unity", "VR", "AI", "XR", "Stage"],
+      "technologies": [
+        "C#",
+        "Unity 6.3 LTS",
+        "Virtual Reality",
+        "Generative AI Pipelines",
+        "XR Interaction Toolkit",
+        "Benchmark"
+      ],
+      "featured": true,
+      "imageUrl": null
+    }
+  ]
+}

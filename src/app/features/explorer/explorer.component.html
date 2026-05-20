@@ -1,0 +1,178 @@
+<div class="explorer-container">
+  <header class="explorer-header">
+    <h1 class="page-title">Explorer les projets</h1>
+    <p class="page-subtitle">
+      Découvrez mes projets professionnels, personnels et académiques fait avec amour.
+    </p>
+  </header>
+
+  <section class="filters-section">
+    <div class="search-box">
+      <app-icon name="search" [size]="20" customClass="search-icon" />
+      <input
+        type="text"
+        [ngModel]="searchQuery()"
+        (ngModelChange)="searchQuery.set($event)"
+        placeholder="Rechercher par titre, technologie, mots clés..."
+        class="search-input"
+      />
+      @if (searchQuery()) {
+        <button class="clear-search" (click)="searchQuery.set('')">
+          <app-icon name="close" [size]="16" />
+        </button>
+      }
+    </div>
+
+    <div class="filter-actions">
+      <div class="category-toggles">
+        <button
+          [class.active]="isCategorySelected('professional')"
+          (click)="toggleCategory('professional')"
+          class="toggle-btn toggle-pro"
+          [class.inactive]="!isCategorySelected('professional')"
+        >
+          <span class="toggle-dot"></span>
+          Professionnels
+        </button>
+        <button
+          [class.active]="isCategorySelected('personal')"
+          (click)="toggleCategory('personal')"
+          class="toggle-btn toggle-perso"
+          [class.inactive]="!isCategorySelected('personal')"
+        >
+          <span class="toggle-dot"></span>
+          Personnels
+        </button>
+        <button
+          [class.active]="isCategorySelected('academic')"
+          (click)="toggleCategory('academic')"
+          class="toggle-btn toggle-academic"
+          [class.inactive]="!isCategorySelected('academic')"
+        >
+          <span class="toggle-dot"></span>
+          Académiques
+        </button>
+      </div>
+
+      @if (selectedTags().length > 0 || searchQuery() || !isAllCategoriesSelected()) {
+        <button class="reset-filters" (click)="resetAllFilters()">Réinitialiser les filtres</button>
+      }
+    </div>
+
+    <div class="tags-selector-wrapper">
+      <span class="tags-label">Filtrer par tags :</span>
+      <div class="tags-cloud">
+        @for (tag of allTags(); track tag) {
+          <button [class.active]="isTagSelected(tag)" (click)="toggleTag(tag)" class="filter-tag">
+            {{ tag }}
+            @if (isTagSelected(tag)) {
+              <app-icon name="check" [size]="12" customClass="tag-check" />
+            }
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="results-meta">
+    <p class="results-count">
+      @if (filteredProjects().length === 0) {
+        Aucun projet trouvé
+      } @else if (filteredProjects().length === 1) {
+        1 projet correspond à vos critères
+      } @else {
+        {{ filteredProjects().length }} projets correspondent à vos critères
+      }
+    </p>
+  </div>
+
+  <section class="projects-grid">
+    @for (project of filteredProjects(); track project.id) {
+      <article class="project-card" (click)="selectedProject.set(project)">
+        @if (project.imageUrl) {
+          <div class="card-image-wrapper">
+            <img [src]="project.imageUrl" [alt]="project.title" class="card-image" />
+            <div class="category-badge" [class]="project.category">
+              {{
+                project.category === 'professional'
+                  ? 'Pro'
+                  : project.category === 'academic'
+                    ? 'Académique'
+                    : 'Perso'
+              }}
+            </div>
+          </div>
+        }
+
+        <div class="card-content">
+          <div class="card-header-row">
+            <h3 class="card-title">{{ project.title }}</h3>
+            @if (!project.imageUrl) {
+              <span class="category-badge inline-badge" [class]="project.category">
+                {{
+                  project.category === 'professional'
+                    ? 'Pro'
+                    : project.category === 'academic'
+                      ? 'Académique'
+                      : 'Perso'
+                }}
+              </span>
+            }
+          </div>
+          <p class="card-description">{{ project.description }}</p>
+
+          <div class="card-tags">
+            @for (tag of project.tags.slice(0, 4); track tag) {
+              <span class="card-tag" (click)="$event.stopPropagation(); toggleTag(tag)">{{
+                tag
+              }}</span>
+            }
+            @if (project.tags.length > 4) {
+              <span class="card-tag card-tag-more">+{{ project.tags.length - 4 }}</span>
+            }
+          </div>
+
+          <div class="card-footer">
+            <span class="view-details">
+              En savoir plus
+              <app-icon name="arrow-right" [size]="16" customClass="footer-arrow" />
+            </span>
+
+            <div class="project-links">
+              @if (project.githubUrl) {
+                <app-icon name="github" [size]="18" customClass="link-icon" />
+              }
+              @if (project.stores?.itch) {
+                <app-icon name="itchio" [size]="18" customClass="link-icon" />
+              }
+              @if (project.stores?.steam) {
+                <app-icon name="steam" [size]="18" customClass="link-icon" />
+              }
+              @if (project.stores?.metaQuest) {
+                <app-icon name="meta-quest" [size]="18" customClass="link-icon" />
+              }
+              @if (project.stores?.googlePlay) {
+                <app-icon name="google-play" [size]="18" customClass="link-icon" />
+              }
+              @if (project.stores?.appStore) {
+                <app-icon name="app-store" [size]="18" customClass="link-icon" />
+              }
+              @if (project.liveUrl) {
+                <app-icon name="external-link" [size]="18" customClass="link-icon" />
+              }
+            </div>
+          </div>
+        </div>
+      </article>
+    } @empty {
+      <div class="no-results-card">
+        <app-icon name="search" [size]="48" customClass="no-results-icon" />
+        <h3>Aucun projet ne correspond</h3>
+        <p>Essayez de modifier votre recherche ou de vider les filtres de tags.</p>
+        <button class="btn btn-secondary" (click)="resetAllFilters()">Vider les filtres</button>
+      </div>
+    }
+  </section>
+
+  <app-project-detail [project]="selectedProject()" (close)="selectedProject.set(null)" />
+</div>
