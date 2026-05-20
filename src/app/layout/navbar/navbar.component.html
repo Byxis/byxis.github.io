@@ -1,0 +1,70 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <a routerLink="/home" class="logo">
+      <span class="logo-accent">&lt;</span>BYXIS<span class="logo-accent"> /&gt;</span>
+    </a>
+
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active" class="nav-item">
+        <app-icon name="user" [size]="16" customClass="nav-icon" />
+        Accueil
+      </a>
+      <a routerLink="/explorer" routerLinkActive="active" class="nav-item">
+        <app-icon name="code" [size]="16" customClass="nav-icon" />
+        Explorer
+      </a>
+      <a routerLink="/cv" routerLinkActive="active" class="nav-item">
+        <app-icon name="cv" [size]="16" customClass="nav-icon" />
+        Mon CV
+      </a>
+      <a href="https://www.linkedin.com/in/serrano-alexis/" target="_blank" class="nav-item">
+        <app-icon name="linkedin" [size]="16" customClass="nav-icon" />
+        LinkedIn
+        <app-icon name="external-link" [size]="12" customClass="nav-icon-subtle" />
+      </a>
+    </div>
+
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <app-icon [name]="isMobileMenuOpen() ? 'close' : 'menu'" [size]="24" />
+    </button>
+  </div>
+
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen()">
+    <a
+      routerLink="/home"
+      routerLinkActive="active"
+      (click)="closeMobileMenu()"
+      class="mobile-nav-item"
+    >
+      <app-icon name="user" [size]="18" />
+      Accueil
+    </a>
+    <a
+      routerLink="/explorer"
+      routerLinkActive="active"
+      (click)="closeMobileMenu()"
+      class="mobile-nav-item"
+    >
+      <app-icon name="code" [size]="18" />
+      Explorer
+    </a>
+    <a
+      href="https://www.linkedin.com/in/serrano-alexis/"
+      target="_blank"
+      (click)="closeMobileMenu()"
+      class="mobile-nav-item"
+    >
+      <app-icon name="linkedin" [size]="18" />
+      LinkedIn
+    </a>
+    <a
+      routerLink="/cv"
+      routerLinkActive="active"
+      (click)="closeMobileMenu()"
+      class="mobile-nav-item"
+    >
+      <app-icon name="cv" [size]="18" />
+      Mon CV
+    </a>
+  </div>
+</nav>
