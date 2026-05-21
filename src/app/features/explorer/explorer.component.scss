@@ -146,6 +146,7 @@
 .toggle-pro.active   { border-color: rgba(0, 242, 254, 0.3); color: #00f2fe; }
 .toggle-perso.active { border-color: rgba(155, 81, 224, 0.3); color: #c495f0; }
 .toggle-academic.active { border-color: rgba(79, 172, 254, 0.3); color: #4facfe; }
+.toggle-hackathon.active { border-color: rgba(255, 107, 139, 0.3); color: #ff6b8b; }
 
 .reset-filters {
   background: none;
@@ -311,6 +312,20 @@
   color: #c495f0;
   border: 1px solid rgba(155, 81, 224, 0.4);
   text-shadow: 0 0 8px rgba(155, 81, 224, 0.5);
+}
+
+.category-badge.academic {
+  background: rgba(79, 172, 254, 0.2);
+  color: #4facfe;
+  border: 1px solid rgba(79, 172, 254, 0.4);
+  text-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+}
+
+.category-badge.hackathon {
+  background: rgba(255, 107, 139, 0.2);
+  color: #ff6b8b;
+  border: 1px solid rgba(255, 107, 139, 0.4);
+  text-shadow: 0 0 8px rgba(255, 107, 139, 0.5);
 }
 
 .card-content {

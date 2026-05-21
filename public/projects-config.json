@@ -4,11 +4,11 @@
       "id": "ruzzle",
       "order": 2,
       "title": "Ruzzle Engine & Game (Rust)",
-      "description": "Un jeu et un moteur graphique 3D complet écrit en Rust et OpenGL, avec une physique personnalisée et des shaders.",
-      "longDescription": "Ruzzle est un projet de 4ème année d'école d'ingénieurs. Il comprend le développement complet d'un moteur de jeu en Rust avec OpenGL, gérant des contrôles fluides et une machine d'états d'animation. Le moteur intègre un système de Transform, des Colliders en deux phases (AABB puis détaillé), une gestion de la gravité et des shaders personnalisés. Les assets (crabe 3D, rig, animations) ont été modélisés dans Blender.",
+      "description": "A complete 3D game and graphics engine written in Rust and OpenGL, featuring custom physics and shaders.",
+      "longDescription": "Ruzzle is a 4th-year engineering school project. It features the complete development of a game engine in Rust with OpenGL, handling fluid controls and an animation state machine. The engine integrates a Transform system, two-phase Colliders (AABB then detailed), gravity management, and custom shaders. The assets (3D crab, rig, animations) were modeled in Blender.",
       "category": "academic",
       "githubUrl": "https://github.com/Byxis/Ruzzle",
-      "tags": ["Rust", "OpenGL", "Blender", "Physique", "3D", "Collider"],
+      "tags": ["Rust", "OpenGL", "Blender", "Physics", "3D", "Collider"],
       "technologies": [
         "Rust",
         "Raylib",
@@ -19,14 +19,15 @@
         "AABB Colliders"
       ],
       "featured": true,
-      "imageUrl": null
+      "imageUrl": "rust.jpg",
+      "videoUrl": null
     },
     {
       "id": "webwarfare",
       "order": 3,
       "title": "WebWarfare - Multiplayer FPS Netcode",
-      "description": "Un FPS multijoueur sur navigateur gérant le netcode en temps réel avec compensation de latence et anti-triche.",
-      "longDescription": "WebWarfare est un projet web de 3ème année d'école d'ingénieurs. Il se focalise sur l'architecture réseau en temps réel, implémentant une compensation de latence avancée (par moyenne de ping et tolérance de gigue/jitter) et une reconnexion automatique. Il intègre également un système anti-triche robuste simulant et vérifiant chaque action des joueurs en parallèle côté serveur.",
+      "description": "A browser-based multiplayer FPS managing real-time netcode with lag compensation and anti-cheat.",
+      "longDescription": "WebWarfare is a 3rd-year engineering school web project. It focuses on real-time network architecture, implementing advanced lag compensation (via ping averaging and jitter tolerance) and automatic reconnection. It also integrates a robust anti-cheat system that simulates and validates every player action in parallel on the server side.",
       "category": "academic",
       "githubUrl": "https://github.com/Byxis/IG3-WebProjectFPS",
       "tags": ["THREE.js", "Netcode", "Multiplayer", "Web", "3D", "Anti-cheat"],
@@ -39,14 +40,15 @@
         "Server Simulation"
       ],
       "featured": true,
-      "imageUrl": null
+      "imageUrl": null,
+      "videoUrl": null
     },
     {
       "id": "bomberman",
       "order": 1,
       "title": "Bomberman Mobile C++ (UE5)",
-      "description": "Un remake complet de Bomberman en C++ sur Unreal Engine 5 optimisée pour mobile.",
-      "longDescription": "Développé pendant mon stage chez Eussam Développements, ce projet recrée le gameplay complet de Bomberman en C++ dans Unreal Engine 5. Il intègre des déplacements d'ennemis par raycast directionnel avec prise de décision probabiliste. Le jeu a été optimisé continuellement pour mobile en désactivant Nanite et en configurant des joysticks virtuels. Les assets ont été modélisés et riggés par mes soins dans Blender puis importés dans UE5 grâce à send2unreal.",
+      "description": "A complete remake of Bomberman in C++ on Unreal Engine 5 optimized for mobile.",
+      "longDescription": "Developed during my internship at Eussam Développements, this project recreates the full gameplay of Bomberman in C++ within Unreal Engine 5. It features enemy movement using directional raycasting with probabilistic decision-making. The game was continuously optimized for mobile by disabling Nanite and configuring virtual joysticks. The assets were modeled and rigged by myself in Blender, then imported into UE5 using send2unreal.",
       "category": "professional",
       "githubUrl": "https://github.com/Byxis/Bomberman",
       "stores": {
@@ -62,17 +64,18 @@
         "Joystick Virtual"
       ],
       "featured": false,
-      "imageUrl": null
+      "imageUrl": "BomberManScreen.png",
+      "videoUrl": "https://www.youtube.com/watch?v=DwU7twPS-EU&list=PLo5i0Ys1lvJo8gsBNQYxK4TKK21NDXUTv&index=6"
     },
     {
       "id": "fireland",
       "order": 4,
       "title": "Fireland Minecraft Server Core",
-      "description": "Conception et architecture d'un serveur Minecraft Java de haute performance avec BDD multithreadée.",
+      "description": "Design and architecture of a high-performance Java Minecraft server with a multithreaded database.",
       "longDescription": "Fireland is a Minecraft server core software and plugin system that leverages multithreaded and asynchronous tasks in Java to process database calls (MySQL) and gameplay logic, eliminating server-side tick lag and hosting a community of over 200 unique players.",
       "category": "personal",
       "githubUrl": "https://github.com/Byxis/Fireland",
-      "tags": ["Java", "MySQL", "Spark Profiler", "Asynchrone"],
+      "tags": ["Java", "MySQL", "Spark Profiler", "Asynchronous"],
       "technologies": [
         "Java",
         "MySQL",
@@ -83,14 +86,15 @@
         "Async Tasks"
       ],
       "featured": true,
-      "imageUrl": null
+      "imageUrl": "Fireland.jpg",
+      "videoUrl": null
     },
     {
       "id": "educational-game",
       "order": 6,
       "title": "Baby Egg Mobile Educational Game (Unity)",
-      "description": "Migration de jeu éducatif vers Unity 6.3 LTS et ajout du support de traductions multi-langues.",
-      "longDescription": "Projet de recherche développé à l'Ulster University (Derry, Irlande du Nord). Il s'agit d'un jeu vidéo éducatif mobile qui a été migré vers Unity 6.3 LTS en raison de la faille de sécurité trouvé dans les anciennes version d'Unity. Ajout de traductions pour supporter plusieurs langues, améliorant ainsi l'accessibilité du jeu à un public international. Gestion de la publication sur le Google Play Store. Création d'un nouveau jeu Baby Egg, non publié pour le moment.",
+      "description": "Migration of an educational game to Unity 6.3 LTS and addition of multi-language translation support.",
+      "longDescription": "Research project developed at Ulster University (Derry, Northern Ireland). It is a mobile educational video game migrated to Unity 6.3 LTS due to the security vulnerability found in older Unity versions. Added translations to support multiple languages, improving international accessibility. Managed publishing on the Google Play Store. Created a new Baby Egg game, currently unpublished.",
       "category": "professional",
       "tags": ["C#", "Unity", "AI"],
       "stores": {
@@ -108,16 +112,17 @@
         "Benchmark"
       ],
       "featured": true,
-      "imageUrl": null
+      "imageUrl": "babyeggjigsaw.webp",
+      "videoUrl": null
     },
     {
       "id": "vr-educational-game",
       "order": 5,
-      "title": "VR Educational Game (Unity)",
-      "description": "Développement d'un jeu éducatif en Réalité Virtuelle avec pipeline d'IA générative et Unity 6.3.",
-      "longDescription": "Projet de recherche développé à l'Ulster University (Derry, Irlande du Nord). Il s'agit d'un jeu vidéo éducatif complet en VR, développé sous Unity 6.3 LTS. L'architecture intègre un pipeline d'IA générative et fait l'objet d'une optimisation continue pour une publication multi-store (Meta Quest / HTC Vive).",
+      "title": "[To be Started] VR Educational Game (Unity)",
+      "description": "Development of a Virtual Reality educational game with a generative AI pipeline and Unity 6.3.",
+      "longDescription": "Research project developed at Ulster University (Derry, Northern Ireland). It is a complete VR educational video game developed under Unity 6.3 LTS. The architecture integrates a generative AI pipeline and is continuously optimized for multi-store publishing (Meta Quest / HTC Vive).",
       "category": "professional",
-      "tags": ["C#", "Unity", "VR", "AI", "XR", "Stage"],
+      "tags": ["C#", "Unity", "VR", "AI", "XR", "Internship"],
       "technologies": [
         "C#",
         "Unity 6.3 LTS",
@@ -127,7 +132,185 @@
         "Benchmark"
       ],
       "featured": true,
-      "imageUrl": null
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "polyagent",
+      "order": 7,
+      "title": "Polyagent - Multi-Agent AI Communication Tool",
+      "description": "An autonomous multi-agent AI system based on Microsoft AutoGen that automates GitHub updates publication to social media.",
+      "longDescription": "Polyagent is a multi-agent AI system designed to solve the 'technical invisibility' problem of developers. Developed in collaboration with Andréa Antoniali and Max Chateau for our Agentic AI course under professor Tiberiu Stratulat, it leverages Microsoft AutoGen to orchestrate multiple specialized agents. The system automatically monitors production branches on GitHub, fetches recent commits, conducts a joint technical review, simplifies and synthesizes technical changes, and formats the output to auto-publish updates directly to channels like Discord without human intervention.",
+      "category": "academic",
+      "githubUrl": "https://github.com/MaxbanCh/polyagent",
+      "tags": ["AutoGen", "AI Agents", "Python", "Automation", "GitHub API"],
+      "technologies": [
+        "Python",
+        "AutoGen",
+        "GPT-4",
+        "GitHub API",
+        "Discord Webhooks",
+        "Multi-Agent Orchestration"
+      ],
+      "featured": true,
+      "imageUrl": "polyagent.jpg",
+      "videoUrl": null
+    },
+    {
+      "id": "cgj26-bugfighter",
+      "order": 8,
+      "title": "Bug Fighter (CGJ 2026)",
+      "description": "A creative puzzle game developed in 30 hours for the Code Game Jam 2026 under the theme 'Festival of Clicks'.",
+      "longDescription": "Bug Fighter is a 2D puzzle/action game created in 30 hours for the 10th edition of Code Game Jam (CGJ26) under the theme 'Fête des clics' (Festival of Clicks). The game revolves around solving click-based mechanics, fixing bugs, and overcoming challenging levels designed to test timing and speed.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Byxis/CGJ26",
+      "tags": ["Unity", "2D", "Puzzle", "Game Jam", "C#"],
+      "technologies": ["Unity", "C#", "2D Game Art", "Level Design", "Game Jam Mechanics"],
+      "featured": false,
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "cgj25-infiniteresonance",
+      "order": 9,
+      "title": "Infinite Resonance (CGJ 2025)",
+      "description": "An immersive rhythm-based puzzle game developed for the Code Game Jam 2025 under the theme 'Infinite Melody'.",
+      "longDescription": "Infinite Resonance is a rhythm-based adventure created during the Code Game Jam 2025. Aligned with the theme 'Mélodie à l'Infini' (Infinite Melody), the gameplay focuses on rythmic patterns and musical synchronization.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Akkuun/CodeGameJam2025",
+      "tags": ["Unity", "Audio", "Puzzle", "Game Jam", "C#"],
+      "technologies": ["Unity", "C#", "Audio Engine", "Procedural Mechanics"],
+      "featured": false,
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "cgj24-legendssouls",
+      "order": 10,
+      "title": "Legend's Souls (CGJ 2024)",
+      "description": "A 2D puzzle adventure where you play a Necromancer summoning the dead to free the trapped legend Gaia.",
+      "longDescription": "Legend's Souls is a 2D action/puzzle adventure game built from scratch in 36 hours for the Code Game Jam 2024 under the theme 'Ethereal Legends'. Players assume the role of a powerful Necromancer exploring dark worlds, summoning minor souls, and solving puzzles to rescue the trapped goddess Gaia from the Great Portal of Souls.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Akkuun/Code_Game_Jam_2024",
+      "tags": ["Unity", "2D", "Lighting", "Art & Design"],
+      "technologies": [
+        "Unity",
+        "C#",
+        "2D Lighting",
+        "Animation Rigging",
+        "Sound Production",
+        "Puzzle Design"
+      ],
+      "featured": false,
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "cgj23-project",
+      "order": 11,
+      "title": "CGJ 2023 - Team Submission",
+      "description": "A fast-paced indie game developed in 36 hours for the Montpellier Code Game Jam 2023.",
+      "longDescription": "A collaborative, fast-paced indie game submission created during the Montpellier Code Game Jam 2023. Built within a strict 36-hour limit, the game incorporates unique gameplay mechanics matching the jam theme, emphasizing fluid movement and engaging user interaction.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/thi-christine-nguyen/CGJ2023",
+      "tags": ["Unity", "Game Jam", "Montpellier IUT", "C#"],
+      "technologies": ["Unity", "C#", "Gameplay Loop", "Interactive UI", "Level Design"],
+      "featured": false,
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "friendly-foes",
+      "order": 12,
+      "title": "Friendly Foes (GDL Game Jam 2022)",
+      "description": "A clever 2D platformer developed in 3 days for the GDL Game Jam 2022, where enemies act as vital tools for progression.",
+      "longDescription": "Friendly Foes is a 2D puzzle platformer built from scratch in 3 days for the GDL Game Jam (August 2022), earning 11th place out of 52 submissions. Created under the theme 'Death is not the end... Death is progress', the game puts players in the shoes of a determined explorer wearing a proud hat inside a very strange cave. The gameplay introduces a mind-bending concept: enemies are physical objects that may not be so bad, transforming them into friends and indispensable platforming tools to advance through the depths.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Akkuun/Code_Game_Jam_Ete_2022",
+      "tags": ["Unity", "2D", "Lighting", "Platformer", "C#"],
+      "technologies": [
+        "Unity",
+        "C#",
+        "2D Animation",
+        "Lighting & Art",
+        "Interactive Physics",
+        "Level Design"
+      ],
+      "featured": false,
+      "imageUrl": "firendly_foes.png",
+      "videoUrl": null
+    },
+    {
+      "id": "nuit-info-24-25",
+      "order": 13,
+      "title": "Nuit de l'Info 2024-2025",
+      "description": "A high-performance web platform built overnight in 15 hours to address the national climate and ecological challenges.",
+      "longDescription": "Nuit de l'Info 24-25 is an overnight challenge web project developed in 15 hours. The project focuses on ecological responsibility, data transparency, and clean user experience to answer the national challenge rules with a highly responsive, modern frontend architecture.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Byxis/NuitInfo24-25",
+      "tags": ["Web App", "Hackathon", "HTML/CSS", "JavaScript"],
+      "technologies": ["TypeScript", "Vite", "Node.js", "Responsive CSS"],
+      "featured": false,
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "nuit-info-25-26",
+      "order": 14,
+      "title": "Nuit de l'Info 2025-2026",
+      "description": "An immersive web platform built overnight in 15 hours centered around cybersecurity awareness and gamified user experience.",
+      "longDescription": "Developed during the legendary Nuit de l'Info 2025-2026, this application aims to gamify cybersecurity training and raise general public awareness about digital risks. Features real-time interactive dashboards and quiz modules optimized for mobile devices.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Byxis/NuitInfo25-26",
+      "tags": ["Web App", "Hackathon", "Security", "Interactivity"],
+      "technologies": ["TypeScript", "Angular"],
+      "featured": false,
+      "imageUrl": null,
+      "videoUrl": null
+    },
+    {
+      "id": "dams4-telemacdata",
+      "order": 15,
+      "title": "DaMS4 - Telemac Hydraulic Emulator",
+      "description": "A high-fidelity hydraulic flood emulator using Machine Learning and Deep Learning to predict real-time water levels.",
+      "longDescription": "DaMS4-TelemacData is a data science project that tackles a major challenge in hydraulic engineering: the slow simulation times of traditional high-fidelity simulators. Developed in collaboration with Elio Denocq, Théo Constantin, Alexis Serrano, and Wassim Ben Nacef, it emulates the Telemac hydraulic model on the Sully-sur-Loire zone for instantaneous and reliable flood predictions. The system explores Lasso Regression, Random Forests with K-fold cross-validation (achieving an exceptional R² of 0.986), and Encoder-Decoder Deep Learning architectures (Autoencoders) processing spatial water level matrices with a Mean Absolute Error of just 10cm. It is accompanied by a DaMS4 Telemac Data Viewer—an interactive R Shiny web application that permits real-time parameter adjustments (friction, discharge) and specific location pinpoints (train station, castle, fire station) for side-by-side model predictions.",
+      "category": "academic",
+      "githubUrl": "https://github.com/Byxis/DaMS4-TelemacData",
+      "tags": ["Data Science", "Deep Learning", "R Shiny", "Hydraulics", "Python", "Autoencoder"],
+      "technologies": [
+        "Python",
+        "R",
+        "Shiny",
+        "TensorFlow",
+        "Random Forest",
+        "Lasso Regression",
+        "Telemac-2D",
+        "Spatial GIS"
+      ],
+      "featured": false,
+      "imageUrl": "deeplearning_telemac.png",
+      "videoUrl": null
+    },
+    {
+      "id": "dams4-se",
+      "order": 16,
+      "title": "DaMS4 - Systems Engineering Dashboard",
+      "description": "A desktop application designed for notes management, system architectures, and engineering data flows.",
+      "longDescription": "DaMS4-SE is a systems engineering and note organization application designed to help teams capture, edit, and manage engineering notes in a highly structured manner. Built using JavaFX and following a clean architecture pattern, it strictly separates structural database concerns from the visual layout layers. It provides real-time systems architecture tracking, model visualization toolsets, and modular data flows.",
+      "category": "academic",
+      "githubUrl": "https://github.com/Byxis/DaMS4-SE",
+      "tags": ["JavaFX", "Systems Engineering", "Clean Architecture", "Java", "Desktop"],
+      "technologies": [
+        "Java",
+        "JavaFX",
+        "Clean Architecture",
+        "Model-View-Controller",
+        "UML / SysML Tools",
+        "XML Parsers"
+      ],
+      "featured": false,
+      "imageUrl": "polyagent.jpg",
+      "videoUrl": null
     }
   ]
 }

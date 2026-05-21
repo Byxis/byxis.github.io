@@ -16,7 +16,7 @@ import { ProjectDetailComponent } from './project-detail.component';
 export class ExplorerComponent implements OnInit {
   private readonly projectService = inject(PROJECT_SERVICE_TOKEN);
 
-  private static readonly ALL_CATEGORIES = ['professional', 'personal', 'academic'] as const;
+  private static readonly ALL_CATEGORIES = ['professional', 'personal', 'academic', 'hackathon'] as const;
 
   readonly allProjects = signal<Project[]>([]);
   readonly searchQuery = signal<string>('');

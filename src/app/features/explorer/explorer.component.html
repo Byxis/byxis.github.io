@@ -52,6 +52,15 @@
           <span class="toggle-dot"></span>
           Académiques
         </button>
+        <button
+          [class.active]="isCategorySelected('hackathon')"
+          (click)="toggleCategory('hackathon')"
+          class="toggle-btn toggle-hackathon"
+          [class.inactive]="!isCategorySelected('hackathon')"
+        >
+          <span class="toggle-dot"></span>
+          Hackathons
+        </button>
       </div>
 
       @if (selectedTags().length > 0 || searchQuery() || !isAllCategoriesSelected()) {
@@ -98,7 +107,9 @@
                   ? 'Pro'
                   : project.category === 'academic'
                     ? 'Académique'
-                    : 'Perso'
+                    : project.category === 'hackathon'
+                      ? 'Hackathon'
+                      : 'Perso'
               }}
             </div>
           </div>
@@ -114,7 +125,9 @@
                     ? 'Pro'
                     : project.category === 'academic'
                       ? 'Académique'
-                      : 'Perso'
+                      : project.category === 'hackathon'
+                        ? 'Hackathon'
+                        : 'Perso'
                 }}
               </span>
             }
