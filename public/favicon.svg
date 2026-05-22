@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    .accent {
+      fill: #00f2fe;
+    }
+    .letter {
+      fill: #ffffff;
+    }
+    @media (prefers-color-scheme: light) {
+      .letter {
+        fill: #090d16;
+      }
+    }
+  </style>
+  <!-- Left Chevron '<' (Exact Space Grotesk Bold Glyph Path, shifted left for 1.5px breathing room) -->
+  <path class="accent" d="M18.40,28.00L18.40,23.20L1.60,28.88L1.60,35.12L18.40,40.80L18.40,36.00L6.48,32.36L6.48,31.64" />
+  
+  <!-- Custom 'B' (Exact Space Grotesk Bold Glyph Path with the 2 left-protruding spurs!) -->
+  <path class="letter" fill-rule="evenodd" d="M35.04,18.00L20.48,18.00L20.48,22.64L24.16,22.64L24.16,41.36L20.48,41.36L20.48,46.00L34.88,46.00Q38.72,46.00 41.04,44.10Q43.36,42.20 43.36,38.92L43.36,38.52Q43.36,36.60 42.64,35.38Q41.92,34.16 40.94,33.50Q39.96,32.84 39.08,32.56L39.08,31.84Q39.96,31.60 41.00,30.94Q42.04,30.28 42.78,29.04Q43.52,27.80 43.52,25.80L43.52,25.40Q43.52,21.88 41.16,19.94Q38.80,18.00 35.04,18.00M29.44,41.20L29.44,34.48L34.32,34.48Q35.96,34.48 37.02,35.32Q38.08,36.16 38.08,37.64L38.08,38.04Q38.08,39.56 37.04,40.38Q36.00,41.20 34.32,41.20L29.44,41.20M29.44,29.68L29.44,22.80L34.40,22.80Q36.12,22.80 37.18,23.64Q38.24,24.48 38.24,26.04L38.24,26.44Q38.24,28.00 37.20,28.84Q36.16,29.68 34.40,29.68" />
+  
+  <!-- Right Chevron '>' (Exact Space Grotesk Bold Glyph Path, shifted right for 1.5px breathing room) -->
+  <path class="accent" d="M62.40,28.88L45.60,23.20L45.60,28.00L57.52,31.64L57.52,32.36L45.60,36.00L45.60,40.80L62.40,35.12" />
+</svg>
