@@ -4,8 +4,9 @@ export interface Project {
   description: string;
   longDescription?: string;
   imageUrl?: string;
+  videoUrl?: string;
   tags: string[];
-  category: 'professional' | 'personal' | 'academic';
+  category: 'professional' | 'personal' | 'academic' | 'hackathon';
   githubUrl?: string;
   stores?: {
     itch?: string | string[];

@@ -1,193 +1,212 @@
-<div class="drawer-backdrop" [class.open]="isOpen()" (click)="handleClose()"></div>
-
-<aside class="drawer-panel" [class.open]="isOpen()">
-  @if (project) {
-    <header class="drawer-header">
-      <div class="header-meta">
-        <span class="category-pill" [class]="project.category">
-          {{ project.category === 'professional' ? 'Projet Professionnel' : 'Projet Personnel' }}
-        </span>
-        <button class="close-btn" (click)="handleClose()" aria-label="Close details">
-          <app-icon name="close" [size]="20" />
-        </button>
-      </div>
-      <h2 class="drawer-title">{{ project.title }}</h2>
-    </header>
-
-    <div class="drawer-content">
-      @if (project.imageUrl) {
-        <div class="banner-wrapper">
-          <img [src]="project.imageUrl" [alt]="project.title" class="banner-image" />
+<div class="modal-overlay" [class.open]="isOpen()" (click)="handleClose()">
+  <div class="modal-panel" [class.open]="isOpen()" (click)="$event.stopPropagation()">
+    @if (project) {
+      <header class="modal-header">
+        <div class="header-meta">
+          <span class="category-pill" [class]="project.category">
+            {{
+              project.category === 'professional'
+                ? 'Projet Professionnel'
+                : project.category === 'academic'
+                  ? 'Projet Académique'
+                  : project.category === 'hackathon'
+                    ? 'Hackathon'
+                    : 'Projet Personnel'
+            }}
+          </span>
+          <button class="close-btn" (click)="handleClose()" aria-label="Close details" title="Fermer (Échap)">
+            <app-icon name="close" [size]="20" />
+          </button>
         </div>
-      }
+        <h2 class="modal-title">{{ project.title }}</h2>
+      </header>
 
-      <div class="project-meta-box">
-        <div class="meta-section">
-          <h4>Technologies utilisées</h4>
-          <div class="tech-tags">
-            @for (tech of project.technologies; track tech) {
-              <span class="tech-tag">{{ tech }}</span>
-            }
+      <div class="modal-content">
+        @if (project.videoUrl) {
+          <div class="video-wrapper">
+            <iframe
+              [src]="project.videoUrl | safeResourceUrl"
+              title="Présentation vidéo du projet"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="video-iframe"
+            ></iframe>
           </div>
-        </div>
+        } @else if (project.imageUrl) {
+          <div class="banner-wrapper">
+            <img [src]="project.imageUrl" [alt]="project.title" class="banner-image" decoding="async" />
+          </div>
+        }
 
-        <div class="action-links">
-          @if (project.githubUrl) {
-            <a [href]="project.githubUrl" target="_blank" class="action-btn action-github">
-              <app-icon name="github" [size]="18" />
-              Code Source GitHub
-              <app-icon name="external-link" [size]="14" />
-            </a>
-          }
-          @if (project.liveUrl) {
-            <a [href]="project.liveUrl" target="_blank" class="action-btn action-live">
-              <app-icon name="external-link" [size]="18" />
-              Lien vers le jeu en ligne
-            </a>
-          }
-        </div>
-
-        @if (project.stores) {
-          <div class="stores-section">
-            <h4>Disponible sur :</h4>
-            <div class="store-buttons">
-              @if (project.stores.itch) {
-                @if (isArray(project.stores.itch)) {
-                  @for (url of project.stores.itch; track url; let idx = $index) {
-                    <a [href]="url" target="_blank" class="store-btn itch">
-                      <app-icon name="itchio" [size]="16" />
-                      Itch.io
-                      @if (
-                        project.stores.itch &&
-                        isArray(project.stores.itch) &&
-                        project.stores.itch.length > 1
-                      ) {
-                        {{ idx + 1 }}
-                      }
-                    </a>
-                  }
-                } @else {
-                  <a [href]="project.stores.itch" target="_blank" class="store-btn itch">
-                    <app-icon name="itchio" [size]="16" />
-                    Itch.io
-                  </a>
-                }
-              }
-              @if (project.stores.steam) {
-                @if (isArray(project.stores.steam)) {
-                  @for (url of project.stores.steam; track url; let idx = $index) {
-                    <a [href]="url" target="_blank" class="store-btn steam">
-                      <app-icon name="steam" [size]="16" />
-                      Steam
-                      @if (
-                        project.stores.steam &&
-                        isArray(project.stores.steam) &&
-                        project.stores.steam.length > 1
-                      ) {
-                        {{ idx + 1 }}
-                      }
-                    </a>
-                  }
-                } @else {
-                  <a [href]="project.stores.steam" target="_blank" class="store-btn steam">
-                    <app-icon name="steam" [size]="16" />
-                    Steam
-                  </a>
-                }
-              }
-              @if (project.stores.metaQuest) {
-                @if (isArray(project.stores.metaQuest)) {
-                  @for (url of project.stores.metaQuest; track url; let idx = $index) {
-                    <a [href]="url" target="_blank" class="store-btn meta">
-                      <app-icon name="meta-quest" [size]="16" />
-                      Meta Quest
-                      @if (
-                        project.stores.metaQuest &&
-                        isArray(project.stores.metaQuest) &&
-                        project.stores.metaQuest.length > 1
-                      ) {
-                        {{ idx + 1 }}
-                      }
-                    </a>
-                  }
-                } @else {
-                  <a [href]="project.stores.metaQuest" target="_blank" class="store-btn meta">
-                    <app-icon name="meta-quest" [size]="16" />
-                    Meta Quest
-                  </a>
-                }
-              }
-              @if (project.stores.googlePlay) {
-                @if (isArray(project.stores.googlePlay)) {
-                  @for (url of project.stores.googlePlay; track url; let idx = $index) {
-                    <a [href]="url" target="_blank" class="store-btn google">
-                      <app-icon name="google-play" [size]="16" />
-                      Google Play
-                      @if (
-                        project.stores.googlePlay &&
-                        isArray(project.stores.googlePlay) &&
-                        project.stores.googlePlay.length > 1
-                      ) {
-                        {{ idx + 1 }}
-                      }
-                    </a>
-                  }
-                } @else {
-                  <a [href]="project.stores.googlePlay" target="_blank" class="store-btn google">
-                    <app-icon name="google-play" [size]="16" />
-                    Google Play
-                  </a>
-                }
-              }
-              @if (project.stores.appStore) {
-                @if (isArray(project.stores.appStore)) {
-                  @for (url of project.stores.appStore; track url; let idx = $index) {
-                    <a [href]="url" target="_blank" class="store-btn apple">
-                      <app-icon name="app-store" [size]="16" />
-                      App Store
-                      @if (
-                        project.stores.appStore &&
-                        isArray(project.stores.appStore) &&
-                        project.stores.appStore.length > 1
-                      ) {
-                        {{ idx + 1 }}
-                      }
-                    </a>
-                  }
-                } @else {
-                  <a [href]="project.stores.appStore" target="_blank" class="store-btn apple">
-                    <app-icon name="app-store" [size]="16" />
-                    App Store
-                  </a>
-                }
+        <div class="project-meta-box">
+          <div class="meta-section">
+            <h4>Technologies utilisées</h4>
+            <div class="tech-tags">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
               }
             </div>
+          </div>
+
+          <div class="action-links">
+            @if (project.githubUrl) {
+              <a [href]="project.githubUrl" target="_blank" class="action-btn action-github">
+                <app-icon name="github" [size]="18" />
+                Code Source GitHub
+                <app-icon name="external-link" [size]="14" />
+              </a>
+            }
+            @if (project.liveUrl) {
+              <a [href]="project.liveUrl" target="_blank" class="action-btn action-live">
+                <app-icon name="external-link" [size]="18" />
+                Lien vers le jeu en ligne
+              </a>
+            }
+          </div>
+
+          @if (project.stores) {
+            <div class="stores-section">
+              <h4>Disponible sur :</h4>
+              <div class="store-buttons">
+                @if (project.stores.itch) {
+                  @if (isArray(project.stores.itch)) {
+                    @for (url of project.stores.itch; track url; let idx = $index) {
+                      <a [href]="url" target="_blank" class="store-btn itch">
+                        <app-icon name="itchio" [size]="16" />
+                        Itch.io
+                        @if (
+                          project.stores.itch &&
+                          isArray(project.stores.itch) &&
+                          project.stores.itch.length > 1
+                        ) {
+                          {{ idx + 1 }}
+                        }
+                      </a>
+                    }
+                  } @else {
+                    <a [href]="project.stores.itch" target="_blank" class="store-btn itch">
+                      <app-icon name="itchio" [size]="16" />
+                      Itch.io
+                    </a>
+                  }
+                }
+                @if (project.stores.steam) {
+                  @if (isArray(project.stores.steam)) {
+                    @for (url of project.stores.steam; track url; let idx = $index) {
+                      <a [href]="url" target="_blank" class="store-btn steam">
+                        <app-icon name="steam" [size]="16" />
+                        Steam
+                        @if (
+                          project.stores.steam &&
+                          isArray(project.stores.steam) &&
+                          project.stores.steam.length > 1
+                        ) {
+                          {{ idx + 1 }}
+                        }
+                      </a>
+                    }
+                  } @else {
+                    <a [href]="project.stores.steam" target="_blank" class="store-btn steam">
+                      <app-icon name="steam" [size]="16" />
+                      Steam
+                    </a>
+                  }
+                }
+                @if (project.stores.metaQuest) {
+                  @if (isArray(project.stores.metaQuest)) {
+                    @for (url of project.stores.metaQuest; track url; let idx = $index) {
+                      <a [href]="url" target="_blank" class="store-btn meta">
+                        <app-icon name="meta-quest" [size]="16" />
+                        Meta Quest
+                        @if (
+                          project.stores.metaQuest &&
+                          isArray(project.stores.metaQuest) &&
+                          project.stores.metaQuest.length > 1
+                        ) {
+                          {{ idx + 1 }}
+                        }
+                      </a>
+                    }
+                  } @else {
+                    <a [href]="project.stores.metaQuest" target="_blank" class="store-btn meta">
+                      <app-icon name="meta-quest" [size]="16" />
+                      Meta Quest
+                    </a>
+                  }
+                }
+                @if (project.stores.googlePlay) {
+                  @if (isArray(project.stores.googlePlay)) {
+                    @for (url of project.stores.googlePlay; track url; let idx = $index) {
+                      <a [href]="url" target="_blank" class="store-btn google">
+                        <app-icon name="google-play" [size]="16" />
+                        Google Play
+                        @if (
+                          project.stores.googlePlay &&
+                          isArray(project.stores.googlePlay) &&
+                          project.stores.googlePlay.length > 1
+                        ) {
+                          {{ idx + 1 }}
+                        }
+                      </a>
+                    }
+                  } @else {
+                    <a [href]="project.stores.googlePlay" target="_blank" class="store-btn google">
+                      <app-icon name="google-play" [size]="16" />
+                      Google Play
+                    </a>
+                  }
+                }
+                @if (project.stores.appStore) {
+                  @if (isArray(project.stores.appStore)) {
+                    @for (url of project.stores.appStore; track url; let idx = $index) {
+                      <a [href]="url" target="_blank" class="store-btn apple">
+                        <app-icon name="app-store" [size]="16" />
+                        App Store
+                        @if (
+                          project.stores.appStore &&
+                          isArray(project.stores.appStore) &&
+                          project.stores.appStore.length > 1
+                        ) {
+                          {{ idx + 1 }}
+                        }
+                      </a>
+                    }
+                  } @else {
+                    <a [href]="project.stores.appStore" target="_blank" class="store-btn apple">
+                      <app-icon name="app-store" [size]="16" />
+                      App Store
+                    </a>
+                  }
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="detail-section">
+          <h3>Description du projet</h3>
+          <p class="description-text">{{ project.longDescription || project.description }}</p>
+        </div>
+
+        @if (project.githubUrl) {
+          <div class="detail-section readme-section">
+            <div class="readme-header">
+              <app-icon name="github" [size]="22" />
+              <h3>Documentation README.md</h3>
+            </div>
+
+            @if (isLoadingReadme()) {
+              <div class="readme-loader">
+                <div class="pulse-loader"></div>
+                <p>Chargement du fichier depuis GitHub...</p>
+              </div>
+            } @else {
+              <div class="markdown-body" [innerHTML]="readmeHtml() | safeHtml"></div>
+            }
           </div>
         }
       </div>
-
-      <div class="detail-section">
-        <h3>Description du projet</h3>
-        <p class="description-text">{{ project.longDescription || project.description }}</p>
-      </div>
-
-      @if (project.githubUrl) {
-        <div class="detail-section readme-section">
-          <div class="readme-header">
-            <app-icon name="github" [size]="22" />
-            <h3>Documentation README.md</h3>
-          </div>
-
-          @if (isLoadingReadme()) {
-            <div class="readme-loader">
-              <div class="pulse-loader"></div>
-              <p>Chargement du fichier depuis GitHub...</p>
-            </div>
-          } @else {
-            <div class="markdown-body" [innerHTML]="readmeHtml() | safeHtml"></div>
-          }
-        </div>
-      }
-    </div>
-  }
-</aside>
+    }
+  </div>
+</div>
