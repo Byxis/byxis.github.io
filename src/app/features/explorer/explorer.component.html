@@ -104,7 +104,7 @@
           </div>
           <div class="card-badges">
             @if (project.videoUrl) {
-              <div class="video-badge" (click)="$event.stopPropagation()">
+              <div class="video-badge" (click)="openProjectWithVideo(project, $event)">
                 <app-icon name="video" [size]="14" />
                 <span class="tooltip-text">Vidéo de présentation disponible</span>
               </div>
@@ -119,6 +119,17 @@
                       ? 'Hackathon'
                       : 'Perso'
               }}
+              <span class="tooltip-text">
+                {{
+                  project.category === 'professional'
+                    ? 'Projet réalisé dans un cadre professionnel'
+                    : project.category === 'academic'
+                      ? 'Projet réalisé lors de mon parcours étudiant'
+                      : project.category === 'hackathon'
+                        ? 'Projet réalisé lors d\'un hackathon compétitif'
+                        : 'Projet personnel réalisé par passion'
+                }}
+              </span>
             </div>
           </div>
         }
@@ -137,6 +148,17 @@
                         ? 'Hackathon'
                         : 'Perso'
                 }}
+                <span class="tooltip-text">
+                  {{
+                    project.category === 'professional'
+                      ? 'Projet réalisé dans un cadre professionnel'
+                      : project.category === 'academic'
+                        ? 'Projet réalisé lors de mon parcours étudiant'
+                        : project.category === 'hackathon'
+                          ? 'Projet réalisé lors d\'un hackathon compétitif'
+                          : 'Projet personnel réalisé par passion'
+                  }}
+                </span>
               </span>
             }
           </div>
@@ -161,46 +183,46 @@
 
             <div class="project-links">
               @if (project.githubUrl) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="github" [size]="18" customClass="link-icon icon-github" />
                   <span class="tooltip-text">GitHub</span>
-                </div>
+                </a>
               }
               @if (project.stores?.itch) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="getStoreUrl(project.stores?.itch)" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="itchio" [size]="18" customClass="link-icon icon-itch" />
                   <span class="tooltip-text">Itch.io</span>
-                </div>
+                </a>
               }
               @if (project.stores?.steam) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="getStoreUrl(project.stores?.steam)" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="steam" [size]="18" customClass="link-icon icon-steam" />
                   <span class="tooltip-text">Steam</span>
-                </div>
+                </a>
               }
               @if (project.stores?.metaQuest) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="getStoreUrl(project.stores?.metaQuest)" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="meta-quest" [size]="18" customClass="link-icon icon-meta" />
                   <span class="tooltip-text">Meta Quest</span>
-                </div>
+                </a>
               }
               @if (project.stores?.googlePlay) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="getStoreUrl(project.stores?.googlePlay)" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="google-play" [size]="18" customClass="link-icon icon-google" />
                   <span class="tooltip-text">Google Play</span>
-                </div>
+                </a>
               }
               @if (project.stores?.appStore) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="getStoreUrl(project.stores?.appStore)" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="app-store" [size]="18" customClass="link-icon icon-apple" />
                   <span class="tooltip-text">App Store</span>
-                </div>
+                </a>
               }
               @if (project.liveUrl) {
-                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="link-wrapper" (click)="$event.stopPropagation()">
                   <app-icon name="external-link" [size]="18" customClass="link-icon icon-live" />
                   <span class="tooltip-text">Démo en ligne</span>
-                </div>
+                </a>
               }
             </div>
           </div>

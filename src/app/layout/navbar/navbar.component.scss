@@ -68,17 +68,15 @@
   border: 1px solid transparent;
 }
 
-.nav-item :host ::ng-deep .nav-icon {
+.nav-item ::ng-deep .nav-icon {
   transition: transform 0.3s ease;
+  transform: translateY(1px);
 }
 
-.nav-icon-subtle {
+.nav-item ::ng-deep .nav-icon-subtle {
   color: rgba(255, 255, 255, 0.3);
-  transition: color 0.3s ease;
-}
-
-.nav-item:hover .nav-icon-subtle {
-  color: #00f2fe;
+  transition: all 0.3s ease;
+  transform: translateY(1.5px);
 }
 
 .nav-item:hover {
@@ -87,8 +85,13 @@
   border-color: rgba(255, 255, 255, 0.05);
 }
 
-.nav-item:hover :host ::ng-deep .nav-icon {
-  transform: translateY(-2px);
+.nav-item:hover ::ng-deep .nav-icon {
+  transform: translateY(-1.5px);
+}
+
+.nav-item:hover ::ng-deep .nav-icon-subtle {
+  color: #00f2fe;
+  transform: translateY(-0.5px);
 }
 
 .nav-item.active {

@@ -109,4 +109,23 @@ export class ExplorerComponent implements OnInit {
     this.selectedCategories.set([...ExplorerComponent.ALL_CATEGORIES]);
     this.selectedTags.set([]);
   }
+
+  getStoreUrl(value?: string | string[]): string {
+    if (!value) return '';
+    return Array.isArray(value) ? value[0] : value;
+  }
+
+  openProjectWithVideo(project: Project, event: Event) {
+    event.stopPropagation();
+    if (project.videoUrl) {
+      const separator = project.videoUrl.includes('?') ? '&' : '?';
+      const autoplayUrl = `${project.videoUrl}${separator}autoplay=1`;
+      this.selectedProject.set({
+        ...project,
+        videoUrl: autoplayUrl,
+      });
+    } else {
+      this.selectedProject.set(project);
+    }
+  }
 }
