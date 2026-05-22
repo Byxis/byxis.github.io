@@ -65,7 +65,7 @@
   min-height: calc(100vh - 70px - 80px);
   padding-top: 70px;
   position: relative;
-  z-index: 10;
+  z-index: 11; /* Set higher than footer (z-index 10) to let modals overlay the footer */
 }
 
 .content-wrapper {
@@ -106,3 +106,5 @@
     padding: 1.5rem;
   }
 }
+
+

@@ -8,7 +8,7 @@
       "longDescription": "Ruzzle is a 4th-year engineering school project. It features the complete development of a game engine in Rust with OpenGL, handling fluid controls and an animation state machine. The engine integrates a Transform system, two-phase Colliders (AABB then detailed), gravity management, and custom shaders. The assets (3D crab, rig, animations) were modeled in Blender.",
       "category": "academic",
       "githubUrl": "https://github.com/Byxis/Ruzzle",
-      "tags": ["Rust", "OpenGL", "Blender", "Physics", "3D", "Collider"],
+      "tags": ["Rust", "OpenGL", "Blender", "Physics", "3D", "Collider", "Puzzle"],
       "technologies": [
         "Rust",
         "Raylib",
@@ -65,7 +65,7 @@
       ],
       "featured": false,
       "imageUrl": "BomberManScreen.png",
-      "videoUrl": "https://www.youtube.com/watch?v=DwU7twPS-EU&list=PLo5i0Ys1lvJo8gsBNQYxK4TKK21NDXUTv&index=6"
+      "videoUrl": "https://www.youtube.com/watch?v=IiSwHdlmKwQ&list=PLo5i0Ys1lvJo8gsBNQYxK4TKK21NDXUTv&index=7"
     },
     {
       "id": "fireland",
@@ -87,7 +87,7 @@
       ],
       "featured": true,
       "imageUrl": "Fireland.jpg",
-      "videoUrl": null
+      "videoUrl": "https://youtu.be/sXHwaBCx3v8"
     },
     {
       "id": "educational-game",
@@ -122,7 +122,7 @@
       "description": "Development of a Virtual Reality educational game with a generative AI pipeline and Unity 6.3.",
       "longDescription": "Research project developed at Ulster University (Derry, Northern Ireland). It is a complete VR educational video game developed under Unity 6.3 LTS. The architecture integrates a generative AI pipeline and is continuously optimized for multi-store publishing (Meta Quest / HTC Vive).",
       "category": "professional",
-      "tags": ["C#", "Unity", "VR", "AI", "XR", "Internship"],
+      "tags": ["C#", "Unity", "VR", "AI", "XR"],
       "technologies": [
         "C#",
         "Unity 6.3 LTS",
@@ -165,9 +165,16 @@
       "category": "hackathon",
       "githubUrl": "https://github.com/Byxis/CGJ26",
       "tags": ["Unity", "2D", "Puzzle", "Game Jam", "C#"],
-      "technologies": ["Unity", "C#", "2D Game Art", "Level Design", "Game Jam Mechanics"],
+      "technologies": [
+        "Unity",
+        "C#",
+        "2D Game Art",
+        "Level Design",
+        "Game Jam Mechanics",
+        "Lightning"
+      ],
       "featured": false,
-      "imageUrl": null,
+      "imageUrl": "bug_fighter.png",
       "videoUrl": null
     },
     {
@@ -178,8 +185,8 @@
       "longDescription": "Infinite Resonance is a rhythm-based adventure created during the Code Game Jam 2025. Aligned with the theme 'Mélodie à l'Infini' (Infinite Melody), the gameplay focuses on rythmic patterns and musical synchronization.",
       "category": "hackathon",
       "githubUrl": "https://github.com/Akkuun/CodeGameJam2025",
-      "tags": ["Unity", "Audio", "Puzzle", "Game Jam", "C#"],
-      "technologies": ["Unity", "C#", "Audio Engine", "Procedural Mechanics"],
+      "tags": ["Unity", "Puzzle", "Game Jam", "C#", "Lightning"],
+      "technologies": ["Unity", "C#"],
       "featured": false,
       "imageUrl": null,
       "videoUrl": null
@@ -192,31 +199,24 @@
       "longDescription": "Legend's Souls is a 2D action/puzzle adventure game built from scratch in 36 hours for the Code Game Jam 2024 under the theme 'Ethereal Legends'. Players assume the role of a powerful Necromancer exploring dark worlds, summoning minor souls, and solving puzzles to rescue the trapped goddess Gaia from the Great Portal of Souls.",
       "category": "hackathon",
       "githubUrl": "https://github.com/Akkuun/Code_Game_Jam_2024",
-      "tags": ["Unity", "2D", "Lighting", "Art & Design"],
-      "technologies": [
-        "Unity",
-        "C#",
-        "2D Lighting",
-        "Animation Rigging",
-        "Sound Production",
-        "Puzzle Design"
-      ],
+      "tags": ["Unity", "2D", "Lightning", "Art & Design"],
+      "technologies": ["Unity", "C#", "2D Lightning", "Animation Rigging"],
       "featured": false,
-      "imageUrl": null,
-      "videoUrl": null
+      "imageUrl": "legend_soul.png",
+      "videoUrl": "https://github-production-user-asset-6210df.s3.amazonaws.com/90316879/299594387-77cf2109-4f7b-4d1a-8b06-62c9ca88faf0.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260521%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260521T235116Z&X-Amz-Expires=300&X-Amz-Signature=a7078dde859d7388fcfafe70a900c16d6ab2f7a7ff54ad20a39de34c4c15697a&X-Amz-SignedHeaders=host&response-content-type=video%2Fmp4"
     },
     {
       "id": "cgj23-project",
       "order": 11,
-      "title": "CGJ 2023 - Team Submission",
+      "title": "Weather Clock (CGJ 2023)",
       "description": "A fast-paced indie game developed in 36 hours for the Montpellier Code Game Jam 2023.",
       "longDescription": "A collaborative, fast-paced indie game submission created during the Montpellier Code Game Jam 2023. Built within a strict 36-hour limit, the game incorporates unique gameplay mechanics matching the jam theme, emphasizing fluid movement and engaging user interaction.",
       "category": "hackathon",
       "githubUrl": "https://github.com/thi-christine-nguyen/CGJ2023",
-      "tags": ["Unity", "Game Jam", "Montpellier IUT", "C#"],
-      "technologies": ["Unity", "C#", "Gameplay Loop", "Interactive UI", "Level Design"],
+      "tags": ["Unity", "C#", "Lightning", "Animation"],
+      "technologies": ["Unity", "C#", "Gameplay Loop", "Animation", "Level Design"],
       "featured": false,
-      "imageUrl": null,
+      "imageUrl": "weather_clock.png",
       "videoUrl": null
     },
     {
@@ -227,12 +227,12 @@
       "longDescription": "Friendly Foes is a 2D puzzle platformer built from scratch in 3 days for the GDL Game Jam (August 2022), earning 11th place out of 52 submissions. Created under the theme 'Death is not the end... Death is progress', the game puts players in the shoes of a determined explorer wearing a proud hat inside a very strange cave. The gameplay introduces a mind-bending concept: enemies are physical objects that may not be so bad, transforming them into friends and indispensable platforming tools to advance through the depths.",
       "category": "hackathon",
       "githubUrl": "https://github.com/Akkuun/Code_Game_Jam_Ete_2022",
-      "tags": ["Unity", "2D", "Lighting", "Platformer", "C#"],
+      "tags": ["Unity", "2D", "Lightning", "Platformer", "C#"],
       "technologies": [
         "Unity",
         "C#",
         "2D Animation",
-        "Lighting & Art",
+        "Lightning & Art",
         "Interactive Physics",
         "Level Design"
       ],
@@ -241,29 +241,29 @@
       "videoUrl": null
     },
     {
-      "id": "nuit-info-24-25",
+      "id": "nuit-info-25-26",
       "order": 13,
+      "title": "Nuit de l'Info 2025-2026",
+      "description": "An interactive OS transition simulator built overnight in 15 hours, guiding users from a proprietary Windows 10 to a free Linux environment through educational mini-games about sustainable digital design (NIRD).",
+      "longDescription": "Developed during the legendary Nuit de l'Info 2025-2026, this project is a retro OS simulator that immerses users in an educational journey about digital responsibility and the NIRD approach. The experience begins on a highly dysfunctional, proprietary 'Windows 10' clone. By exploring the system, clicking icons, and launching interactive mini-games, users learn about the challenges of proprietary software and the principles of green IT. Gradually, as challenges are completed, the interface transitions seamlessly into a free, open-source Linux environment, illustrating a complete digital transformation toward sustainable, responsible, and free computing.",
+      "category": "hackathon",
+      "githubUrl": "https://github.com/Byxis/NuitInfo25-26",
+      "tags": ["Web App"],
+      "technologies": ["Angular", "TypeScript", "SCSS"],
+      "featured": false,
+      "imageUrl": "ndl25-26.png",
+      "videoUrl": null
+    },
+    {
+      "id": "nuit-info-24-25",
+      "order": 14,
       "title": "Nuit de l'Info 2024-2025",
       "description": "A high-performance web platform built overnight in 15 hours to address the national climate and ecological challenges.",
       "longDescription": "Nuit de l'Info 24-25 is an overnight challenge web project developed in 15 hours. The project focuses on ecological responsibility, data transparency, and clean user experience to answer the national challenge rules with a highly responsive, modern frontend architecture.",
       "category": "hackathon",
       "githubUrl": "https://github.com/Byxis/NuitInfo24-25",
-      "tags": ["Web App", "Hackathon", "HTML/CSS", "JavaScript"],
+      "tags": ["Web App", "HTML/CSS"],
       "technologies": ["TypeScript", "Vite", "Node.js", "Responsive CSS"],
-      "featured": false,
-      "imageUrl": null,
-      "videoUrl": null
-    },
-    {
-      "id": "nuit-info-25-26",
-      "order": 14,
-      "title": "Nuit de l'Info 2025-2026",
-      "description": "An immersive web platform built overnight in 15 hours centered around cybersecurity awareness and gamified user experience.",
-      "longDescription": "Developed during the legendary Nuit de l'Info 2025-2026, this application aims to gamify cybersecurity training and raise general public awareness about digital risks. Features real-time interactive dashboards and quiz modules optimized for mobile devices.",
-      "category": "hackathon",
-      "githubUrl": "https://github.com/Byxis/NuitInfo25-26",
-      "tags": ["Web App", "Hackathon", "Security", "Interactivity"],
-      "technologies": ["TypeScript", "Angular"],
       "featured": false,
       "imageUrl": null,
       "videoUrl": null
@@ -276,11 +276,10 @@
       "longDescription": "DaMS4-TelemacData is a data science project that tackles a major challenge in hydraulic engineering: the slow simulation times of traditional high-fidelity simulators. Developed in collaboration with Elio Denocq, Théo Constantin, Alexis Serrano, and Wassim Ben Nacef, it emulates the Telemac hydraulic model on the Sully-sur-Loire zone for instantaneous and reliable flood predictions. The system explores Lasso Regression, Random Forests with K-fold cross-validation (achieving an exceptional R² of 0.986), and Encoder-Decoder Deep Learning architectures (Autoencoders) processing spatial water level matrices with a Mean Absolute Error of just 10cm. It is accompanied by a DaMS4 Telemac Data Viewer—an interactive R Shiny web application that permits real-time parameter adjustments (friction, discharge) and specific location pinpoints (train station, castle, fire station) for side-by-side model predictions.",
       "category": "academic",
       "githubUrl": "https://github.com/Byxis/DaMS4-TelemacData",
-      "tags": ["Data Science", "Deep Learning", "R Shiny", "Hydraulics", "Python", "Autoencoder"],
+      "tags": ["Data Science", "Deep Learning", "R Shiny", "Python"],
       "technologies": [
         "Python",
-        "R",
-        "Shiny",
+        "R Shiny",
         "TensorFlow",
         "Random Forest",
         "Lasso Regression",
@@ -299,7 +298,7 @@
       "longDescription": "DaMS4-SE is a systems engineering and note organization application designed to help teams capture, edit, and manage engineering notes in a highly structured manner. Built using JavaFX and following a clean architecture pattern, it strictly separates structural database concerns from the visual layout layers. It provides real-time systems architecture tracking, model visualization toolsets, and modular data flows.",
       "category": "academic",
       "githubUrl": "https://github.com/Byxis/DaMS4-SE",
-      "tags": ["JavaFX", "Systems Engineering", "Clean Architecture", "Java", "Desktop"],
+      "tags": ["Systems Engineering", "Java", "Desktop"],
       "technologies": [
         "Java",
         "JavaFX",

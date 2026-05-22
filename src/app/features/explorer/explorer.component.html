@@ -101,6 +101,14 @@
         @if (project.imageUrl) {
           <div class="card-image-wrapper">
             <img [src]="project.imageUrl" [alt]="project.title" class="card-image" />
+          </div>
+          <div class="card-badges">
+            @if (project.videoUrl) {
+              <div class="video-badge" (click)="$event.stopPropagation()">
+                <app-icon name="video" [size]="14" />
+                <span class="tooltip-text">Vidéo de présentation disponible</span>
+              </div>
+            }
             <div class="category-badge" [class]="project.category">
               {{
                 project.category === 'professional'
@@ -153,25 +161,46 @@
 
             <div class="project-links">
               @if (project.githubUrl) {
-                <app-icon name="github" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="github" [size]="18" customClass="link-icon icon-github" />
+                  <span class="tooltip-text">GitHub</span>
+                </div>
               }
               @if (project.stores?.itch) {
-                <app-icon name="itchio" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="itchio" [size]="18" customClass="link-icon icon-itch" />
+                  <span class="tooltip-text">Itch.io</span>
+                </div>
               }
               @if (project.stores?.steam) {
-                <app-icon name="steam" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="steam" [size]="18" customClass="link-icon icon-steam" />
+                  <span class="tooltip-text">Steam</span>
+                </div>
               }
               @if (project.stores?.metaQuest) {
-                <app-icon name="meta-quest" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="meta-quest" [size]="18" customClass="link-icon icon-meta" />
+                  <span class="tooltip-text">Meta Quest</span>
+                </div>
               }
               @if (project.stores?.googlePlay) {
-                <app-icon name="google-play" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="google-play" [size]="18" customClass="link-icon icon-google" />
+                  <span class="tooltip-text">Google Play</span>
+                </div>
               }
               @if (project.stores?.appStore) {
-                <app-icon name="app-store" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="app-store" [size]="18" customClass="link-icon icon-apple" />
+                  <span class="tooltip-text">App Store</span>
+                </div>
               }
               @if (project.liveUrl) {
-                <app-icon name="external-link" [size]="18" customClass="link-icon" />
+                <div class="link-wrapper" (click)="$event.stopPropagation()">
+                  <app-icon name="external-link" [size]="18" customClass="link-icon icon-live" />
+                  <span class="tooltip-text">Démo en ligne</span>
+                </div>
               }
             </div>
           </div>

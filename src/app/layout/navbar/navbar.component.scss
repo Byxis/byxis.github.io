@@ -49,6 +49,7 @@
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  position: relative; /* Crucial for absolute position of nav-indicator */
 }
 
 .nav-item {
@@ -100,14 +101,26 @@
 
 .nav-item.active::after {
   content: '';
+  display: none; /* Hide static indicator */
+}
+
+/* Sliding active indicator */
+.nav-indicator {
   position: absolute;
   bottom: 0;
-  left: 20%;
-  right: 20%;
+  left: 0;
+  width: var(--active-width, 0px);
   height: 2px;
   background: linear-gradient(90deg, #00f2fe, #9b51e0);
   border-radius: 2px;
   box-shadow: 0 0 8px #00f2fe;
+  transform: translate3d(var(--active-left, 0px), 0, 0);
+  transition: transform 0.38s cubic-bezier(0.25, 1, 0.5, 1),
+              width 0.38s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.25s ease;
+  opacity: var(--active-opacity, 0);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .mobile-toggle {
