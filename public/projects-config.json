@@ -194,7 +194,7 @@
     {
       "id": "cgj24-legendssouls",
       "order": 10,
-      "title": "Legend's Souls (CGJ 2024)",
+      "title": "Legend's Souls (CGJ 2024 - 4th Place)",
       "description": "A 2D puzzle adventure where you play a Necromancer summoning the dead to free the trapped legend Gaia.",
       "longDescription": "Legend's Souls is a 2D action/puzzle adventure game built from scratch in 36 hours for the Code Game Jam 2024 under the theme 'Ethereal Legends'. Players assume the role of a powerful Necromancer exploring dark worlds, summoning minor souls, and solving puzzles to rescue the trapped goddess Gaia from the Great Portal of Souls.",
       "category": "hackathon",
@@ -208,7 +208,7 @@
     {
       "id": "cgj23-project",
       "order": 11,
-      "title": "Weather Clock (CGJ 2023)",
+      "title": "Weather Clock (CGJ 2023 - 1st Place)",
       "description": "A fast-paced indie game developed in 36 hours for the Montpellier Code Game Jam 2023.",
       "longDescription": "A collaborative, fast-paced indie game submission created during the Montpellier Code Game Jam 2023. Built within a strict 36-hour limit, the game incorporates unique gameplay mechanics matching the jam theme, emphasizing fluid movement and engaging user interaction.",
       "category": "hackathon",
@@ -222,7 +222,7 @@
     {
       "id": "friendly-foes",
       "order": 12,
-      "title": "Friendly Foes (GDL Game Jam 2022)",
+      "title": "Friendly Foes (GDL Game Jam 2022 - 11th Place)",
       "description": "A clever 2D platformer developed in 3 days for the GDL Game Jam 2022, where enemies act as vital tools for progression.",
       "longDescription": "Friendly Foes is a 2D puzzle platformer built from scratch in 3 days for the GDL Game Jam (August 2022), earning 11th place out of 52 submissions. Created under the theme 'Death is not the end... Death is progress', the game puts players in the shoes of a determined explorer wearing a proud hat inside a very strange cave. The gameplay introduces a mind-bending concept: enemies are physical objects that may not be so bad, transforming them into friends and indispensable platforming tools to advance through the depths.",
       "category": "hackathon",

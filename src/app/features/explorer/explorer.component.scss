@@ -252,6 +252,7 @@
   transform: translate3d(0, -6px, 0);
   background: rgba(20, 30, 52, 0.85);
   border-color: rgba(0, 242, 254, 0.18);
+  z-index: 10;
 }
 
 .project-card:hover :host ::ng-deep .footer-arrow {
@@ -308,9 +309,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(13, 21, 37, 0.8);
+  background: rgba(13, 21, 37, 0.35);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 242, 254, 0.4);
   color: #00f2fe;
   width: 28px;
   height: 28px;
@@ -386,6 +387,53 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+
+    .tooltip-text {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .tooltip-text {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: rgba(13, 21, 37, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: normal;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: rgba(13, 21, 37, 0.95) transparent transparent transparent;
+    }
+  }
 }
 
 .category-badge.professional {
@@ -393,6 +441,16 @@
   color: #00f2fe;
   border: 1px solid rgba(0, 242, 254, 0.4);
   text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+
+  &:hover {
+    background: rgba(0, 242, 254, 0.25);
+    border-color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+    
+    .tooltip-text {
+      border-color: rgba(0, 242, 254, 0.3);
+    }
+  }
 }
 
 .category-badge.personal {
@@ -400,6 +458,16 @@
   color: #c495f0;
   border: 1px solid rgba(155, 81, 224, 0.4);
   text-shadow: 0 0 8px rgba(155, 81, 224, 0.5);
+
+  &:hover {
+    background: rgba(155, 81, 224, 0.25);
+    border-color: #c495f0;
+    box-shadow: 0 0 15px rgba(155, 81, 224, 0.3);
+
+    .tooltip-text {
+      border-color: rgba(155, 81, 224, 0.3);
+    }
+  }
 }
 
 .category-badge.academic {
@@ -407,6 +475,16 @@
   color: #4facfe;
   border: 1px solid rgba(79, 172, 254, 0.4);
   text-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+
+  &:hover {
+    background: rgba(79, 172, 254, 0.25);
+    border-color: #4facfe;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.3);
+
+    .tooltip-text {
+      border-color: rgba(79, 172, 254, 0.3);
+    }
+  }
 }
 
 .category-badge.hackathon {
@@ -414,6 +492,16 @@
   color: #ff6b8b;
   border: 1px solid rgba(255, 107, 139, 0.4);
   text-shadow: 0 0 8px rgba(255, 107, 139, 0.5);
+
+  &:hover {
+    background: rgba(255, 107, 139, 0.25);
+    border-color: #ff6b8b;
+    box-shadow: 0 0 15px rgba(255, 107, 139, 0.3);
+
+    .tooltip-text {
+      border-color: rgba(255, 107, 139, 0.3);
+    }
+  }
 }
 
 .card-content {
@@ -439,7 +527,7 @@
 }
 
 .inline-badge {
-  position: static;
+  position: relative;
   font-size: 0.7rem;
   padding: 0.2rem 0.6rem;
   white-space: nowrap;
@@ -516,6 +604,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 
   app-icon {
     display: inline-flex;
