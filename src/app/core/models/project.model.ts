@@ -16,6 +16,7 @@ export interface Project {
     appStore?: string | string[];
   };
   liveUrl?: string;
+  iframeUrl?: string;
   technologies: string[];
   featured: boolean;
   order?: number;

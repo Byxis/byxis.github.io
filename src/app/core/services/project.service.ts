@@ -14,6 +14,19 @@ export class MockProjectService implements IProjectService {
 
   private readonly richMetadataFailsafe: Project[] = [
     {
+      id: 'network-architecture',
+      title: 'Network Architecture & Infrastructure',
+      description: 'Interactive map and status dashboard of my Home Lab: Server, Client, and planned Proxmox layouts.',
+      longDescription: 'Detailed overview of my home laboratory and server environments. This interactive viewer displays my active Server and Client infrastructures, along with my planned virtualization layout using Proxmox VE for advanced service orchestration, virtualization, and network zoning.',
+      category: 'personal',
+      iframeUrl: 'https://dev.notes.axithem.fr/s/4w4d7e8051ec1xyza71vqpht9w',
+      tags: ['Sysadmin', 'Network', 'Proxmox', 'Home Lab'],
+      technologies: ['Proxmox VE', 'HedgeDoc', 'Docker', 'OPNsense', 'VLANs'],
+      featured: true,
+      imageUrl: 'server.png',
+      order: 5
+    },
+    {
       id: 'ruzzle',
       title: 'Ruzzle Engine & Game (Rust)',
       description: `A complete 3D game and graphics engine written in Rust and OpenGL, featuring custom physics and shaders.`,

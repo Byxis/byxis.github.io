@@ -189,6 +189,47 @@
           <p class="description-text">{{ project.longDescription || project.description }}</p>
         </div>
 
+        @if (project.iframeUrl && customIframeUrl()) {
+          <div class="detail-section iframe-section animate-fade-in">
+            <div class="iframe-header">
+              <div class="header-left">
+                <app-icon name="network" [size]="22" />
+                <h3>Visualisation de l'Infrastructure</h3>
+              </div>
+              <button class="settings-toggle-btn" (click)="toggleEditUrl()" title="Configurer l'URL du document" aria-label="Settings">
+                <app-icon name="menu" [size]="18" />
+              </button>
+            </div>
+
+            @if (isEditingUrl()) {
+              <div class="url-editor-box">
+                <p class="editor-label">Modifier l'URL de votre HedgeDoc / Document :</p>
+                <div class="input-row">
+                  <input #urlInput [value]="customIframeUrl()" placeholder="Passez l'URL de votre document ici..." class="url-input" (keydown.enter)="updateIframeUrl(urlInput.value)" />
+                  <div class="editor-buttons">
+                    <button (click)="updateIframeUrl(urlInput.value)" class="save-url-btn">
+                      Enregistrer
+                    </button>
+                    <button (click)="resetIframeUrl()" class="reset-url-btn" title="Réinitialiser à l'URL par défaut">
+                      Réinitialiser
+                    </button>
+                  </div>
+                </div>
+              </div>
+            }
+
+            <div class="iframe-viewport-container">
+              <iframe
+                [src]="customIframeUrl() | safeResourceUrl"
+                title="Infrastructure Network"
+                frameborder="0"
+                allowfullscreen
+                class="network-iframe"
+              ></iframe>
+            </div>
+          </div>
+        }
+
         @if (project.githubUrl) {
           <div class="detail-section readme-section">
             <div class="readme-header">

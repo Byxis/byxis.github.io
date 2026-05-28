@@ -36,6 +36,8 @@ export class ProjectDetailComponent implements OnChanges, OnDestroy {
   readonly isOpen = signal(false);
   readonly isLoadingReadme = signal(false);
   readonly readmeHtml = signal<string>('');
+  readonly customIframeUrl = signal<string>('');
+  readonly isEditingUrl = signal(false);
 
   private readmeSub?: Subscription;
   private readmeTimeout?: any;
@@ -59,6 +61,15 @@ export class ProjectDetailComponent implements OnChanges, OnDestroy {
         // Clear previous state and show loader immediately
         this.isLoadingReadme.set(true);
         this.readmeHtml.set('');
+        
+        // Initialize customizable iframe URL from localStorage or project config
+        if (proj.iframeUrl) {
+          const stored = localStorage.getItem(`iframe-url-${proj.id}`);
+          this.customIframeUrl.set(stored || proj.iframeUrl);
+        } else {
+          this.customIframeUrl.set('');
+        }
+        this.isEditingUrl.set(false);
 
         // Trigger visual modal opening
         setTimeout(() => this.isOpen.set(true), 50);
@@ -182,5 +193,26 @@ export class ProjectDetailComponent implements OnChanges, OnDestroy {
       console.error('Error resolving relative URLs', e);
       return html;
     }
+  }
+
+  updateIframeUrl(newUrl: string) {
+    if (this.project) {
+      const cleanUrl = newUrl.trim();
+      localStorage.setItem(`iframe-url-${this.project.id}`, cleanUrl);
+      this.customIframeUrl.set(cleanUrl);
+      this.isEditingUrl.set(false);
+    }
+  }
+
+  resetIframeUrl() {
+    if (this.project && this.project.iframeUrl) {
+      localStorage.removeItem(`iframe-url-${this.project.id}`);
+      this.customIframeUrl.set(this.project.iframeUrl);
+      this.isEditingUrl.set(false);
+    }
+  }
+
+  toggleEditUrl() {
+    this.isEditingUrl.update(v => !v);
   }
 }

@@ -7,7 +7,7 @@ import { Routes } from '@angular/router';
 })
 class ExternalRedirectComponent implements OnInit {
   ngOnInit() {
-    window.location.href = 'https://youtube.com';
+    window.location.href = 'https://www.youtube.com/playlist?list=PLo5i0Ys1lvJqJDUovCvDTNths1NpwlsjH';
   }
 }
 
